@@ -1,0 +1,33 @@
+
+
+
+
+
+
+
+
+					7. Amaliy pog`ona (Foydalanuvchilar)
+
+					6. Taqdimot pog`ona (Dasturchilar)
+
+					5. Siyans pog`ona (Dasturchilar)
+
+					4. Transport pog`ona (Segmentlar TSP UDP)
+
+					3. Tarmoq pog`ona (Router ipni taniydi)
+
+					2. Kanal pog`ona (Swich macni taniydi)
+
+					1. Fizik pog`ona (Hub kabel)
+
+						
+						> swich <
+
+enable
+switch# configur terminal
+switch(config)# hostname
+name(config)# enable password
+name(config)# service password-encryption
+name(config)# enable secret
+
+
