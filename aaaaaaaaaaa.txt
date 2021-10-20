@@ -31,3 +31,4 @@ name(config)# service password-encryption
 name(config)# enable secret
 
 
+https://software-download.microsoft.com/db/Win10_21H1_English_x64.iso?t=7366f520-956d-44d3-bcfd-bd13e861cdb5&e=1634823772&h=8a0f8a0617774bc5da9048741fad1443
