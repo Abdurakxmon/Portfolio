@@ -1,34 +1,47 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.oooo{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-left: -20px;
+	padding: 0;
+	margin-top: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background-color: #85c875;
+	border: none;
+	z-index: 1;
+}
+.oooo:hover{
+	background-color: #293744;
+}
+nav
+{
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+	position: absolute;
+	z-index: 10000000000000;
+}
 
+.offcanvas{
+	margin-top: 50px;
+	background-color: #33414e;
+	color: white;
+}
+.logo{
+	margin-top: 5px;
+	width: 200px;
+	margin-left: 20px;
+	height: 40px;
+	margin-bottom: 5px;
 
-
-
-
-
-
-
-					7. Amaliy pog`ona (Foydalanuvchilar)
-
-					6. Taqdimot pog`ona (Dasturchilar)
-
-					5. Siyans pog`ona (Dasturchilar)
-
-					4. Transport pog`ona (Segmentlar TSP UDP)
-
-					3. Tarmoq pog`ona (Router ipni taniydi)
-
-					2. Kanal pog`ona (Swich macni taniydi)
-
-					1. Fizik pog`ona (Hub kabel)
-
-						
-						> swich <
-
-enable
-switch# configur terminal
-switch(config)# hostname
-name(config)# enable password
-name(config)# service password-encryption
-name(config)# enable secret
-
-
-https://software-download.microsoft.com/db/Win10_21H1_English_x64.iso?t=7366f520-956d-44d3-bcfd-bd13e861cdb5&e=1634823772&h=8a0f8a0617774bc5da9048741fad1443
+}
+.body-logo{
+	width: 100%;
+	height: 100%;
+	background-color: #85c875;
+}
