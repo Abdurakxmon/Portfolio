@@ -76,3 +76,45 @@ def query_handler(call):
     os.remove(min(glob.glob('video//*'), key=os.path.getctime))
 bot.infinity_polling()
 
+'''
+ls=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] 
+n=int(input())
+x,y,z,o = 0,0,0,0
+flag=False
+flag2=False
+flag3=False
+for j in range(n):
+	string=ls[x]+ls[y]+ls[z]+ls[o]
+	print(string)
+	if flag:
+		o-=1;
+	else:
+		o+=1
+	if o==len(ls) or o==-1:
+		if flag2:
+			z-=1;
+		else:
+			z+=1
+		o-=1
+		flag=True
+		if z==len(ls) or z==-1:
+			if flag3:
+				y-=1;
+			else:
+				y+=1
+			flag2=True
+			z-=1
+			if y==len(ls) or y==-1:
+				flag3=True
+				y-=1
+				x+=1
+	if o==-2:
+		o+=2
+		flag=False
+	if z==-2:
+		z+=2
+		flag2=False
+	if y==-2:
+		y+=2
+		flag3=False
+'''
