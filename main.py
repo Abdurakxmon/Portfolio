@@ -78,6 +78,7 @@ bot.infinity_polling()
 
 '''
 ls=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] 
+url="https://emovie21.xyz/movie/242095/the-signal.html"
 n=int(input())
 x,y,z,o = 0,0,0,0
 flag=False
