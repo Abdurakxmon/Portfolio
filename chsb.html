@@ -1,5 +1,137 @@
-boshida $_SESSION["post"]=array() qilib ochirvor ok
+<!-- boshida $_SESSION["post"]=array() qilib ochirvor ok
 if(isset($_GET)){
         array_push($_SESSION["post"],["title"=>$_GET["title"],"text"=>$_GET["text"]]);
   
     }
+ -->
+<?php
+    session_start();
+    
+
+    $test = [
+        [
+            "question" => "If you ___ free tonight, we might go out for a drink, or to the cinema.",
+            "A" => "would be",
+            "B" => "will be",
+            "C" => "are",
+            "ans" => "A"
+        ],
+        [
+            "question" => "He ___ depressed if he fails the exam.",
+            "A" => "will be",
+            "B" => "is",
+            "C" => "would be",
+            "ans" => "A"
+        ],
+        [
+            "question" => "If I didn't know you, I ___ you were crazy.",
+            "A" => "wpuld think",
+            "B" => "will think",
+            "C" => "thought",
+            "ans" => "A"
+        ],
+        [
+            "question" => "Tell me the truth if you __",
+            "A" => "can",
+            "B" => "could",
+            "C" => "might",
+            "ans" => "A"
+        ],
+        [
+            "question" => "If you had a bigger salary, you ____ more unnecessary things.",
+            "A" => "will buy",
+            "B" => "would buy",
+            "C" => "buy",
+            "ans" => "A"
+        ],
+        [
+            "question" => "If it ___ for Tom, I wouldn't be here.",
+            "A" => "isn't",
+            "B" => "weren't",
+            "C" => "won't",
+            "ans" => "A"
+        ],
+        [
+            "question" => "You should call me if you ___ anything unusual.",
+            "A" => "saw",
+            "B" => "will see",
+            "C" => "see",
+            "ans" => "A"
+            
+        ]
+    ];
+    function randomGen($min, $max, $quantity) {
+        $numbers = range($min, $max);
+        shuffle($numbers);
+        return array_slice($numbers, 0, $quantity);
+    }
+    
+    
+    
+    if ($_POST['ism']!="" && $_POST['familiya']!="") {
+        $ism = $_POST['ism'];
+        $familiya = $_POST['familiya'];
+        $_SESSION['userName'] = $ism;
+        $_SESSION['userSurname'] = $familiya;
+        $ls_id = randomGen(0,count($test)-1,5);
+        $_SESSION["question_ids"]=$ls_id;
+    }
+    $score = 0;
+    foreach($_SESSION["question_ids"] as $i){
+        if ($_GET[$i]==$test[$i]["ans"]) $score+=1;
+    }
+    $_SESSION["score"]=$score;
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container my-3">
+        <form method="POST">
+            <div class="mb-3">
+                <label for="exampleInputName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="exampleInputName" name="ism">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputSurname" class="form-label">Surname</label>
+                <input type="text" class="form-control" id="exampleInputSurname" name="familiya">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <form method="GET">
+        <?php
+ 
+          foreach($_SESSION["question_ids"] as $i){
+        
+            echo'
+            <h3>'.$test[$i]["question"].'</h3> 
+            <input type="radio" name="'.$i.'" value="A"> 
+            <label for="html">'.$test[$i]["A"].'</label><br>  
+            <input type="radio" name="'.$i.'" value="B"> 
+            <label for="html">'.$test[$i]["B"].'</label><br> 
+            <input type="radio" name="'.$i.'" value="C">
+            <label for="html">'.$test[$i]["C"].'</label><br>';
+          }
+          ?>
+          <input type="submit">
+        </form>
+        <h1>
+            <?php 
+            echo $_SESSION["score"];
+            ?>
+        </h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</body>
+</html>
+
